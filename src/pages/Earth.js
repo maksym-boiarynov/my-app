@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import * as THREE from 'three';
+import EarthTexture from '../pictures/Earth_texture.jpg'
 
 function Earth() {
     useEffect(() => {
@@ -16,7 +17,7 @@ function Earth() {
     const geometry = new THREE.SphereGeometry(2, 32, 32);
 
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load('/Earth_texture.jpg');
+    const texture = textureLoader.load(EarthTexture);
 
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
