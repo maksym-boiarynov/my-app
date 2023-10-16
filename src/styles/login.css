@@ -77,3 +77,9 @@ button{
     font-size: 1em;
     font-weight: 600;
 }
+#Lock{
+	position: absolute;
+	width: 45px;
+	margin-left: 275px;
+	margin-top: 8px;
+}
