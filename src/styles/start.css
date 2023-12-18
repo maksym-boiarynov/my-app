@@ -116,3 +116,10 @@ button{
     opacity: 0;
    }
   }
+#Lock{
+	position: absolute;
+	width: 45px;
+	margin-left: 275px;
+	margin-top: 8px;
+}
+
