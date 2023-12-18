@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import '../styles/start.css';
-
+import CodesHelper from '../helpers/CodesHelper';
 class Start extends Component {
-  render () {
+	render() {
+		//localStorage.setItem("codeExpDate", new Date());
+		console.log(localStorage.getItem("code"));
+		//console.log(localStorage.getItem("codeExpDate"));
+		let code;
+		CodesHelper.GetCode()
+		//alert("piu piu pou pou" + code);
     return (
 		<>
 			  <link rel="stylesheet" href="index.css" />
