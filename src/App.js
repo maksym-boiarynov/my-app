@@ -1,6 +1,6 @@
 import React from 'react';
 import Earth from './pages/Earth';
-import Login from './pages/Login';
+import Start from './pages/Start';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -9,11 +9,10 @@ function App() {
 		<Router>
 			<Routes>
 				<Route exact path="/" Component={Earth} />
-				<Route path="/Login" Component={Login} />
+				<Route path="/Start" Component={Start} />
 				
 			</Routes>
 		</Router>
-		ebat;
     </div>
   );
 }
