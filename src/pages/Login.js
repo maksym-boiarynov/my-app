@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import lock from '../pictures/lock.png'
+import lock from '../pictures/lock_2.png'
 
 class Login extends Component {
   render () {
@@ -13,7 +13,7 @@ class Login extends Component {
 								<div className="inputbox">
 									<img src={lock} id="Lock" />
 									
-									<input className="passwordInput" type="text" required />
+									<input className="passwordInput" type="password" required />
 									<label htmlFor="passwordInput">Your code</label>
 								</div>
 								<button>Log in</button>
