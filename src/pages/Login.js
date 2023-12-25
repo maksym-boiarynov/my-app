@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import '../styles/login.css';
 import lock from '../pictures/lock.png'
 
 class Login extends Component {
   render () {
     return (
-		<>
+		<div className='login-container'>
 				<section>
 					<div className="form-box">
 						<div className="form-value">
@@ -22,7 +21,7 @@ class Login extends Component {
 						</div>
 					</div>
 				</section>
-		</>
+		</div>
 	)
 	}
 	

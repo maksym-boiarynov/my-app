@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import '../styles/start.css';
 
 class Start extends Component {
   render () {
     return (
-		<>
+		<div className='start-container'>
 			  <link rel="stylesheet" href="index.css" />
 			  <title>Start site</title>
 				<section>
@@ -23,7 +22,7 @@ class Start extends Component {
 						</div>
 					</div>
 				</section>
-		</>
+		</div>
 	)
 	}
 	
