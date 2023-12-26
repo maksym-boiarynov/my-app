@@ -1,24 +1,30 @@
 import axios from "axios";
+import APIHelperBase from "./APIHelperBase.js"
 
-class CodesHelper{
-    static baseURL = "http://26.145.106.179:7281" //hardcoded ip..?
+class CodesHelper extends APIHelperBase {
 
     static async GetCode() {
         var curDate = new Date();
         //console.log(curDate);
-        if (localStorage.getItem("code") != "" && Date.parse(localStorage.getItem("codeExpDate")) > curDate) {
+        if (this.isValidCode(localStorage.getItem("code")) && Date.parse(localStorage.getItem("codeExpDate")) > curDate) {
             return localStorage.getItem("code");
         }
 
         console.log("getting a code.........................")
-        var response = await axios.post(
-            this.baseURL + "/Generate"
-        );
-        let code = response.data;
-
+        let code = await this.HandleRequest(async () =>
+        {
+            return axios.post(this.baseURL + "/Generate")
+        })
+        if (! this.isValidCode(code))
+            return;
+        console.log(code);
         localStorage.setItem("code", code);
         localStorage.setItem("codeExpDate", new Date(curDate.getTime() + 30 * 60000));
         return code;
+    }
+    static isValidCode(code)
+    {
+        return !(code == "" || code == undefined || code == "undefined")
     }
 }
 export default CodesHelper;
