@@ -15,7 +15,7 @@ class CodesHelper extends APIHelperBase {
         {
             return axios.post(this.baseURL + "/Generate")
         })
-        if (! this.isValidCode(code))
+        if (! this.isValidString(code))
             return;
         console.log(code);
         localStorage.setItem("code", code);

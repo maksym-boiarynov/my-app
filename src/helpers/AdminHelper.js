@@ -1,27 +1,34 @@
 import axios from "axios";
 import APIHelperBase from "./APIHelperBase.js";
 
-class CodesHelper extends APIHelperBase{
+class AdminHelper extends APIHelperBase{
 
     static async Login(password) {
         var curDate = new Date();
 
-        if (localStorage.getItem("jwt") != "" && Date.parse(localStorage.getItem("jwtExpDate")) > curDate) {
+        if (this.isValidString(localStorage.getItem("jwt")) && Date.parse(localStorage.getItem("jwtExpDate")) > curDate) {
             return localStorage.getItem("jwt");
         }
 
-        console.log("getting jwt")
+        console.log("getting jwt");
+        const config = { headers: {'Content-Type': 'application/json'} };
         var response = await axios.post(
             this.baseURL + "/Admin",
-            {
-                password
-            }
+                password,
+                config
         );
-        let code = response.data;
+        let jwt = response.data;
 
-        localStorage.setItem("code", code);
-        localStorage.setItem("codeExpDate", new Date(curDate.getTime() + 30 * 60000));
-        return code;
+        localStorage.setItem("jwt", jwt);
+        localStorage.setItem("jwtExpDate", new Date(curDate.getTime() + 30 * 60000));
+        return jwt;
+    }
+    static async isLoggedIn()
+    {
+        var curDate = new Date();
+        console.log(localStorage.getItem("jwt"));
+        console.log(this.isValidString(localStorage.getItem("jwt")));
+        return (this.isValidString(localStorage.getItem("jwt")) && Date.parse(localStorage.getItem("jwtExpDate")) > curDate);
     }
 }
-export default CodesHelper;
+export default AdminHelper;
