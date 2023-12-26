@@ -3,16 +3,19 @@ import APIHelperBase from "./APIHelperBase.js";
 
 class CodesHelper extends APIHelperBase{
 
-    static async GetCode() {
+    static async Login(password) {
         var curDate = new Date();
-        //console.log(curDate);
-        if (localStorage.getItem("code") != "" && Date.parse(localStorage.getItem("codeExpDate")) > curDate) {
-            return localStorage.getItem("code");
+
+        if (localStorage.getItem("jwt") != "" && Date.parse(localStorage.getItem("jwtExpDate")) > curDate) {
+            return localStorage.getItem("jwt");
         }
 
-        console.log("getting a code.........................")
+        console.log("getting jwt")
         var response = await axios.post(
-            this.baseURL + "/Generate"
+            this.baseURL + "/Admin",
+            {
+                password
+            }
         );
         let code = response.data;
 

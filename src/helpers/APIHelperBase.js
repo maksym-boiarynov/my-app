@@ -17,5 +17,9 @@ class APIHelperBase{
 
         return data;
     }
+    static isValidString(str)
+    {
+        return !(str == "" || str == undefined || str == "undefined")
+    }
 }
 export default APIHelperBase;

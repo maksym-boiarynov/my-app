@@ -6,7 +6,7 @@ class CodesHelper extends APIHelperBase {
     static async GetCode() {
         var curDate = new Date();
         //console.log(curDate);
-        if (this.isValidCode(localStorage.getItem("code")) && Date.parse(localStorage.getItem("codeExpDate")) > curDate) {
+        if (this.isValidString(localStorage.getItem("code")) && Date.parse(localStorage.getItem("codeExpDate")) > curDate) {
             return localStorage.getItem("code");
         }
 
@@ -21,10 +21,6 @@ class CodesHelper extends APIHelperBase {
         localStorage.setItem("code", code);
         localStorage.setItem("codeExpDate", new Date(curDate.getTime() + 30 * 60000));
         return code;
-    }
-    static isValidCode(code)
-    {
-        return !(code == "" || code == undefined || code == "undefined")
     }
 }
 export default CodesHelper;
