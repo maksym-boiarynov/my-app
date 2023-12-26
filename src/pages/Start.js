@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../styles/start.css';
 import CodesHelper from '../helpers/CodesHelper';
+
 class Start extends Component {
 	render() {
 		//localStorage.setItem("codeExpDate", new Date());
@@ -10,7 +10,7 @@ class Start extends Component {
 		CodesHelper.GetCode()
 		//alert("piu piu pou pou" + code);
     return (
-		<>
+		<div className='start-container'>
 			  <link rel="stylesheet" href="index.css" />
 			  <title>Start site</title>
 				<section>
@@ -29,7 +29,7 @@ class Start extends Component {
 						</div>
 					</div>
 				</section>
-		</>
+		</div>
 	)
 	}
 	

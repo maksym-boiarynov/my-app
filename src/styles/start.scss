@@ -1,0 +1,77 @@
+.start-container {
+
+  *{
+      margin: 0;
+      padding: 0;
+  }
+  section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      background: url('../pictures/earth_background_3.jpg')no-repeat;
+      background-size: cover;
+      background-position:center;
+  }
+form{
+  width: 100%;
+  height: 15vh;
+  }
+  .form-box{
+      position: relative;
+      width: 20vw;
+      height: 42vh;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  h2{
+      display: inline-block;
+      font-size: 2em;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+  .loading-container {
+      display: inline-block;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+  .loading-dots {
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      margin-left: 0.5vw;
+      margin-bottom: 10px;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin: 0 5px;
+      opacity: 0;
+      animation: dotAnimation 1.5s infinite;
+    }
+    
+  @keyframes dotAnimation {
+    0% {
+      opacity: 0;
+    }
+      50% {
+      opacity: 1;
+    }
+      100% {
+      opacity: 0;
+    }
+    }
+}

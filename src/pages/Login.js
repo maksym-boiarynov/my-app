@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/start.css';
-import lock from '../pictures/lock.png'
+import lock from '../pictures/lock_2.png'
 import AdminHelper from "../helpers/AdminHelper";
 import { Navigate } from 'react-router';
 
@@ -40,7 +39,7 @@ class Login extends Component {
 	}
   render () {
     return (
-		<>
+		<div className='login-container'>
 				<section>
 					<div className="form-box">
 						<div className="form-value">
@@ -49,7 +48,7 @@ class Login extends Component {
 								<div className="inputbox">
 									<img src={lock} id="Lock" />
 									{this.state.navTag}
-									<input onChange={this.handleInputChange} value={this.state.password} className="passwordInput" type="text" required />
+									<input onChange={this.handleInputChange} value={this.state.password} className="passwordInput" type="password" required />
 									<label htmlFor="passwordInput">Your code</label>
 								</div>
 								<button>Log in</button>
@@ -57,7 +56,7 @@ class Login extends Component {
 						</div>
 					</div>
 				</section>
-		</>
+		</div>
 	)
 	}
 	
