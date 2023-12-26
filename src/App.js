@@ -9,7 +9,8 @@ function App() {
     <div className="App">
 		<Router>
 			<Routes>
-				<Route path="/start" Component={Start} />
+				<Route index element = {<Start />} />
+	  			<Route path="/start" Component={Start} />
 				<Route path="/login" Component={Login} />
 				<Route path="/earth" Component={Earth} />
 			</Routes>
@@ -19,4 +20,3 @@ function App() {
 }
 
 export default App;
-//<Route index element = {<Start />} />
