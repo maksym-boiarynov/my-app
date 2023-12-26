@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import * as THREE from 'three';
+import EarthTexture from '../pictures/Earth_texture.jpg'
 
 function Earth() {
     useEffect(() => {
@@ -10,13 +11,13 @@ function Earth() {
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     console.log(document.getElementById('earth-container').children);
-    if (document.getElementById('earth-container').children.length == 0)
+    if (document.getElementById('earth-container').children.length === 0)
     document.getElementById('earth-container').appendChild(renderer.domElement);
 
     const geometry = new THREE.SphereGeometry(2, 32, 32);
 
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load('/Earth_texture.jpg');
+    const texture = textureLoader.load(EarthTexture);
 
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
