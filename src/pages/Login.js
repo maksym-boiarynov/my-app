@@ -22,7 +22,7 @@ class Login extends Component {
 	{
 		event.preventDefault();
 		let password = this.state.password;
-		console.log( await AdminHelper.Login(password));
+		await AdminHelper.Login(password);
 		this.tryNavigate();
 	}
 	handleInputChange(event)
@@ -31,7 +31,7 @@ class Login extends Component {
 	}
 	tryNavigate()
 	{
-		if (AdminHelper.isLoggedIn())
+		if (AdminHelper.TokenPresent())
 		{
 			console.log("redirecting...");
 			this.setState({navTag: (<Navigate replace to="/odmen" />)});

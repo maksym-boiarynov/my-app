@@ -10,11 +10,11 @@ class APIHelperBase{
         });
         if (response === undefined)
         {
+            console.log("the API response is undefined!");
             return;
         }
-        let data = response.data;
 
-        return data;
+        return response;
     }
     static isValidString(str)
     {

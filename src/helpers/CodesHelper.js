@@ -10,11 +10,11 @@ class CodesHelper extends APIHelperBase {
             return localStorage.getItem("code");
         }
 
-        console.log("getting a code.........................")
+        console.log("getting a code")
         let code = await this.HandleRequest(async () =>
         {
             return axios.post(this.baseURL + "/Generate")
-        })
+        }).data
         if (! this.isValidString(code))
             return;
         console.log(code);
