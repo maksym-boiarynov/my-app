@@ -14,9 +14,12 @@ class CodesHelper extends APIHelperBase {
         let code = await this.HandleRequest(async () =>
         {
             return axios.post(this.baseURL + "/Generate")
-        }).data
+        });
         if (! this.isValidString(code))
+        {
+            console.log("Failed to verify code " + code);
             return;
+        }
         console.log(code);
         localStorage.setItem("code", code);
         localStorage.setItem("codeExpDate", new Date(curDate.getTime() + 30 * 60000));
