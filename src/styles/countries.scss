@@ -1,0 +1,45 @@
+body{
+    height: 100vh;
+    overflow: hidden;
+    background: url('../pictures/earth_background_3.jpg')no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 20vw;
+    height: 42vh;
+    perspective: 800px;
+}
+.container:hover > .card{
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+.front,
+.back{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    position: absolute;
+    backface-visibility: hidden;
+
+}
+.front{
+    background-image: url(../pictures/ukraine_flag.png);
+    background-position:center;
+}
+.back{
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
